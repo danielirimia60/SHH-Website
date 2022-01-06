@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!--Head of the page-->
+    <head>
+
+        <!--Metas-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Title-->
+        <title>Contact</title>
+
+        <!--CSS-->
+        <link href="Resources/CSS/contact.css" type="text/css" rel="stylesheet">
+
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin="crossorigin">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap"
+            rel="stylesheet">
+        
+        <!--Google maps-->
+        <script
+        defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8cvg0hfzyALV3LkAoFXCuIN6SJNC9Ku8&callback=initMap"></script>
+        <script src="Resources/Components/map.js"></script>
+        <!--FAQs dropdown-->
+        <script src="Resources/Components/FAQs.js"></script>
+    </head>
+
+    <!--Body starts-->
+    <body>
+
+        <!--Navigation / Hero banner-->
+        <div class="hwrap">
+            <header id="start-waypoint">
+
+                <!--Navigation-->
+                <div class="nav-wrap-wrap">
+                    <div class="nav-wrap">
+                        <div class="logo-wrap">
+                            <a href="index.html"><img
+                                src="./Resources/Images/logo.svg"
+                                alt="Logo presenting the image of Stephenson's Historic house"/></a>
+                        </div>
+                        <nav class="main-nav-bar">
+                            <ul>
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="house.html">House</a>
+                                </li>
+                                <li>
+                                    <a href="garden.html">Garden</a>
+                                </li>
+                                <li>
+                                    <a href="maze.html">Maze</a>
+                                </li>
+                                <li>
+                                    <a href="café.html">Café</a>
+                                </li>
+                                <li>
+                                    <a href="news&events.html">Events</a>
+                                </li>
+                                <li>
+                                    <a href="table.html">Info and prices</a>
+                                </li>
+                                <li>
+                                    <a id="active-page" href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <!--Hero Banner-->
+                <div class="hero">
+                    <!--Hero images used depending on screen size-->
+                    <div class="hero-image">
+                        <img
+                            class="main-img"
+                            src="Resources/Images/contact_hero.jpg"
+                            alt="Image of 3 wooden cubes with a phone receiver on one, 
+                            an envelope on another and @ on the last."/>
+                    </div>
+                    <!--Semi-transparent layer to make the text mod readable-->
+                    <div class="transparent-layer"></div>
+                    <!--Hero title-->
+                    <div class="hero-title">
+                        <h1>Contact us</h1>
+                        <h2>If there's something you'd like to ask, please<br>
+                            get in touch using one of the methods below.
+                        </h2>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <!--Main content-->
+        <div class="mwrap">
+            <div class="main-content">
+
+                <!--Contact information, media links and google maps-->
+                <div class="section1">
+                    <div class="info-mediawrap">
+                        <div class="infowrap">
+                            <div class="contact-phone">
+                                <img src="Resources/Images/phone logo alt.svg" alt="image of a phone icon"/>
+                                <h3>Phone:</h3>
+                                <p>(44) 01632 960745</p>
+                            </div>
+                            <div class="contact-email">
+                                <img src="Resources/Images/email logo alt.svg" alt="image of a email icon"/>
+                                <h3>Email:</h3>
+                                <p>SHH@gmail.co.uk</p>
+                            </div>
+                            <div class="contact-location">
+                                <img src="Resources/Images/location logo.svg" alt="image of a location tag"/>
+                                <h3>Location:</h3>
+                                <p>25 Aviemore Ct, Darlington, England, DL1 2TF</p>
+                            </div>
+                        </div>
+                        <div class="mediawrap">
+                            <h3>Check our social media pages</h3>
+                            <div class="media-logos">
+                                <a href="https://www.facebook.com" target="_blank">
+                                    <img class="fb" src="./Resources/Images/facebook logo.svg" alt="facebook logo"/>
+                                </a>
+                                <a href="https://www.instagram.com" target="_blank">
+                                    <img class="ig" src="Resources/Images/instagram logo.svg" alt="instagram logo"/>
+                                </a>
+                                <a href="https://www.twitter.com" target="_blank">
+                                    <img class="tw" src="Resources/Images/twitter logo.svg" alt="twitter logo"/>
+                                </a>
+                                <a href="https://www.pinterest.com" target="_blank">
+                                    <img class="pt" src="Resources/Images/pinterest logo.svg" alt="pinterest logo"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="map"></div>
+                </div>
+
+                <!--Contact form and image-->
+                <div class="section2">
+                    
+                    <!--Contact form-->
+                    <div class="contact-form">
+                        <form class="c-form">
+                            <label title="name">First name</label>
+                            <input id="c-name" type="text" required>
+                            <label title="name">Second name</label>
+                            <input id="c-name" type="name" required>
+                            <label title="email">Email adress</label>
+                            <input id="email-a" type="text" required>
+                            <label title="purpose">Purpose</label>
+                            <input id="c-opt" type="text" list="options" placeholder="Choose 1"  required>
+                            <datalist id="options">
+                                <option>General question</option>
+                                <option>Opening times</option>
+                                <option>Prices</option>
+                                <option>COVID-19 restrictions</option>
+                                <option>Suggestions</option>
+                                <option>Business enquieries</option>
+                            </datalist>
+                            <label title="text area">Write your text here</label>
+                            <textarea id="f-text" required></textarea>
+                            <button class="primary-btn btn" type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <!--Contact image-->
+                    <div class="contact-imgwrap">
+                        <img
+                            src="Resources/Images/FAQs.jpg"
+                            alt="Picture of a open book with a pen and watch on top of it">
+                    </div>
+                </div>
+
+                <!--FAQ section-->
+                <div class="section3">
+                    <div class="faqswrapper">
+                        <h2 class="faq-title">FAQs</h2>
+                        <div class="faq-questions">
+                            <div class="question-answer-faq">
+                                <div class="question">
+                                    <h4>Is photography and videography allowed at Stephenson's Historic House?</h4>
+                                    <img src="Resources/Images/angle-down.svg" alt="angle up icon">
+                                </div>
+                                <div class="answer">
+                                    <p>Photography and videography for personal use is welcome, however tripods and
+                                        lighting equipment may not be used in the house, garden or maze and selfie
+                                        sticks may not be used in the house.
+                                    </p>
+                                    <p>Flash photography may also be restricted in the house and drones are not
+                                        permitted anywhere on the estate. Professional photography is not permitted, and
+                                        photographs taken on the estate may not be sold or used for any commercial or
+                                        promotional purpose.</p>
+                                </div>
+                            </div>
+                            <div class="question-answer-faq">
+                                <div class="question">
+                                    <h4>Are dogs allowed at Stephenson's Historic House?</h4>
+                                    <img src="Resources/Images/angle-down.svg" alt="angle up icon">
+                                </div>
+                                <div class="answer">
+                                    <p>Well behaved dogs on leads are welcome in the garden and maze, and assistance
+                                        dogs are allowed in the house and café as well. We've also made some additions
+                                        this year, to make visiting Stephenson's Historic House with your dog as simple
+                                        and fun as possible.</p>
+                                    <p>Dogs are not allowed in the house or café, but there are posts to tie dogs up
+                                        for a short time outside the maze. We do not advise that you leave your dog in
+                                        your car. Assistance dogs, such as guide dogs, are allowed in the house and
+                                        café.</p>
+                                </div>
+                            </div>
+                            <div class="question-answer-faq">
+                                <div class="question">
+                                    <h4>Do you accept credit & debit cards?</h4>
+                                    <img src="Resources/Images/angle-down.svg" alt="angle up icon">
+                                </div>
+                                <div class="answer">
+                                    <p>Yes, all major cards are accepted; Visa, Mastercard, Maestro, Diners Club
+                                        International, Discover, Union Pay & American Express. We also accept
+                                        contactless payments.</p>
+                                </div>
+                            </div>
+                            <div class="question-answer-faq">
+                                <div class="question">
+                                    <h4>Is the car park free to use?</h4>
+                                    <img src="Resources/Images/angle-down.svg" alt="angle up icon">
+                                </div>
+                                <div class="answer">
+                                    <p>Yes, our car park is free. Visitors must not, however, leave Stephenson's
+                                        Historic House while using the car parking facilities available.</p>
+                                    <p>The car park is accessible until 9pm Wed - Fri and 8pm on Sat - Sun.</p>
+                                </div>
+                            </div>
+                            <div class="question-answer-faq">
+                                <div class="question">
+                                    <h4>Do carers qualify for discounted entry into Stephenson's Historic House?</h4>
+                                    <img src="Resources/Images/angle-down.svg" alt="angle up icon">
+                                </div>
+                                <div class="answer">
+                                    <p>Registered carers have free access to Stephenson's Historic House when
+                                        accompanying the person they provide care for. A ticket will be provided for any
+                                        carer when appropriate identification is shown at the ticket desk upon entry.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Page footer-->
+        <div class="fwrap">
+            <footer class="main-footer">
+
+                <!--Footer form-->
+                <div class="footer-form-wrap">
+                    <h3>Tell us what you think</h3>
+                    <form class="footer-form">
+                        <input type="text" placeholder="Name" required="required">
+                        <input type="text" placeholder="Email adress" required="required">
+                        <textarea type="textarea" required="required"></textarea>
+                        <button type="submit" class="btn secondary-btn">Submit</button>
+                    </form>
+                </div>
+
+                <!--Footer navigation-->
+                <div class="site-map-wrapper">
+                    <div class="site-map">
+                        <h3>Site map</h3>
+                        <ul class="footer-nav">
+                            <ul id="home">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                            </ul>
+                            <ul id="house-garden">
+                                <li>
+                                    <a href="house.html">House</a>
+                                </li>
+                                <li>
+                                    <a href="garden.html">Garden</a>
+                                </li>
+                            </ul>
+                            <ul id="maze-café">
+                                <li>
+                                    <a href="maze.html">Maze</a>
+                                </li>
+                                <li>
+                                    <a href="café.html">Café</a>
+                                </li>
+                            </ul>
+                            <ul id="prices">
+                                <li>
+                                    <a href="table.html">Info and prices</a>
+                                </li>
+                            </ul>
+                            <ul id="events">
+                                <li>
+                                    <a href="news&events.html">Events</a>
+                                </li>
+                            </ul>
+                            <ul id="contact">
+                                <li>
+                                    <a href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--Logo and contact-->
+                <div class="footer-info-wrapper">
+                    <div class="footer-info">
+                        <div class="footer-logo-wrapper">
+                            <a href="#start-waypoint">
+                                <img
+                                    src="Resources/Images/logo.svg"
+                                    alt="Logo presenting the image of Stephenson's Historic house">
+                            </a>
+                        </div>
+                        <div class="phone">
+                            <ul>
+                                <li>
+                                    <img src="Resources/Images/phone logo.svg" alt="Image of a telephone receiver">
+                                </li>
+                                <li>
+                                    <p>(44) 01632 960745</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="email">
+                            <ul>
+                                <li>
+                                    <img src="./Resources/Images/email logo.svg" alt="Image of an envelope">
+                                </li>
+                                <li>
+                                    <p>SHH@gmail.co.uk</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <!--Copyright-->
+            <div class="cr">
+                <p>© 2021 SHH UK, Inc. All rights reserved.</p>
+            </div>
+
+            <!--Sponsors-->
+            <div class="sponsors">
+                <div class="sponsors-logos">
+
+                    <img
+                        src="Resources/Images/nycc_logo_print.svg"
+                        alt="North Yorkshire County Council logo">
+
+                    <img
+                        src="Resources/Images/Darlington_FC_(crest).png"
+                        alt="Darlington Footbal Club logo">
+
+                    <img src="Resources/Images/treasure house.png" alt="Treasure House logo">
+
+                    <img
+                        src="Resources/Images/VB and VE.png"
+                        alt="Visit Britain and Visit England logos">
+
+                    <img src="Resources/Images/Green-Tourism-logo.png" alt="Green Tourism logo">
+
+                    <img src="Resources/Images/trip advisor.png" alt="Trip Advisor logo">
+
+                    <img
+                        src="Resources/Images/Darlington_Borough_Council.svg"
+                        alt="Darlington Borough Council logo">
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

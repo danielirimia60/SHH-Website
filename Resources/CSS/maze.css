@@ -1,0 +1,632 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --pale-red: hsl(1.2, 70%, 97.5%);
+    --dark-orange: #ca9400;
+    --bright-orange: #ffbb00;
+    --dark-grey: hsl(11.3, 5.8%, 23.7%);
+    --black: hsl(10, 4.2%, 13.9%);
+}
+
+/* ----- Global styles ------ */
+* {
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::selection {
+    background-color: var(--bright-orange);
+}
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hwrap {
+    position: relative;
+    margin: 0 auto;
+}
+.mwrap {
+    position: relative;
+    margin: 0 auto;
+}
+.fwrap {
+    position: relative;
+    margin: 0 auto;
+    background-image: linear-gradient(hsl(0, 0%, 60%),hsl(0, 0%, 50%),hsl(0, 0%, 40%) , hsl(0, 0%, 30%), hsl(0, 0%, 20%));
+    background-repeat: no-repeat;
+}
+
+/* ----- Header ----- */
+header {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+/* ------ Navigation ------ */
+.nav-wrap-wrap {
+    position: relative;
+    margin: 0 auto;
+    height: auto;
+}
+.nav-wrap {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    z-index: 122;
+    margin: 0 auto;
+    width: 100vw;
+    height: 7em;
+    background-color: hsla(187, 2%, 98%, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    -o-backdrop-filter: blur(5px);
+    -ms-backdrop-filter: blur(5px);
+    box-shadow: 1px 1px 10px 0 hsla(0, 0%, 0%, 0.07);
+}
+/* ---- Navigation logo ----- */
+.logo-wrap {
+    width: 8%;
+    height: auto;
+}
+.logo-wrap img {
+    width: 100%;
+    height: auto;
+    min-width: 100px;
+    vertical-align: middle;
+}
+/* ------ Main navigation -------- */
+.main-nav-bar li {
+    list-style: none;
+    display: inline-block;
+}
+.main-nav-bar li a {
+    float: left;
+    font-size: 1.3rem;
+    color: var(--black);
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5em;
+    border-bottom: 1px solid transparent;
+    font-weight: 400;
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    text-transform: uppercase;
+}
+.main-nav-bar #active-page,
+.main-nav-bar li a:hover {
+    color: var(--bright-orange);
+    border-bottom: var(--bright-orange) 1px solid;
+    transition: color 0.25s ease-out;
+}
+/* ------- Hero Banner ------- */
+.hero {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: 2100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+/* ------- Main & secondary images -------- */
+.hero-image {
+    grid-area: 1 / 1;
+    position: relative;
+    z-index: -2;
+    width: 100%;
+}
+.hero-image .main-img {
+    width: 100%;
+    filter: contrast(95%) saturate(105%);
+}
+/* ----- Oppacity layer ---- */
+.transparent-layer {
+    grid-area: 1 / 1;
+    position: relative;
+    z-index: 1;
+    background: hsla(0, 0%, 0%, 0.05);
+    width: 100%;
+    height: 99.6%;
+}
+/* ----- Hero title, text and button ----- */
+.hero-title {
+    grid-area: 1 / 1;
+    justify-self: flex-start;
+    align-self: flex-end;
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: hsla(0, 0%, 90%, 0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 5px;
+    margin-bottom: 0.22%;
+}
+.hero-title h1,
+.hero-title h2 {
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    color: var(--black);
+    line-height: 1.2;
+}
+.hero-title h1 {
+    font-size: 7rem;
+    text-indent: .1em;
+}
+.hero-title h2 {
+    font-size: 2.8rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* ---- Main ------ */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 2100px;
+    margin: 0 auto;
+}
+/* -------- On-page navigation and media links ----- */
+.section1 .s1wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    max-width: 2100px;
+    margin: 3% auto 2%;
+}
+/* ------ On-page navigation ------- */
+.on-page-navigation-wrap {
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+}
+.on-page-navigation-wrap a {
+    padding: 1em 1em 1em 0.6em;
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.4em;
+    transition: color 0.25s ease-out;
+}
+.on-page-navigation-wrap a:hover {
+    color: var(--bright-orange);
+}
+.on-page-navigation-wrap #active-link {
+    color: var(--bright-orange);
+    border-bottom: 1px solid var(--bright-orange);
+}
+/* ------- Media links ----- */
+.mediawrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2%;
+}
+.media h3 {
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+    font-weight: 400;
+}
+.media-logos {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1%;
+}
+.media-logos img {
+    width: 3.2em;
+    height: 3.2em;
+    margin-left: 5px;
+}
+.section1 hr {
+    display: block;
+    margin: 2% auto 0;
+    width: 95%;
+}
+/* ----- Media logos filter effects on hover ----- */
+.fb:hover {
+    filter: invert(33%) sepia(10%) saturate(3744%) hue-rotate(183deg) brightness(99%) contrast(92%);
+    transition: filter 0.2s ease-out;
+}
+.ig:hover {
+    filter: invert(29%) sepia(82%) saturate(931%) hue-rotate(270deg) brightness(90%) contrast(96%);
+    transition: filter 0.2s ease-out;
+}
+.tw:hover {
+    filter: invert(44%) sepia(92%) saturate(674%) hue-rotate(160deg) brightness(99%) contrast(96%);
+    transition: filter 0.2s ease-out;
+}
+.pt:hover {
+    filter: invert(8%) sepia(89%) saturate(5316%) hue-rotate(340deg) brightness(113%) contrast(122%);
+    transition: filter 0.2s ease-out;
+}
+.section2-intro hr {
+    display: block;
+    margin: 2% auto 0;
+    width: 95%;
+}
+/* -------- Main article -------- */
+.section2 {
+    margin: 5% auto 4%;
+    display: flex;
+    width: 100%;
+}
+.section3 {
+    margin: 5% auto 4%;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+.textwrapper {
+    color: var(--black);
+    flex: 1;
+    justify-self: center;
+    align-self: center;
+}
+.imgwrapper {
+    flex: 1;
+    justify-self: center;
+    align-self: center;
+}
+#gallery-waypoint {
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+.section2 .textwrapper h3 , .section3 .textwrapper h3{
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    text-align: center;
+    padding: .5em;
+    font-size: 5rem;
+}
+.section2 .textwrapper p, .section3 .textwrapper p {
+    font-size: 1.8rem;
+    text-indent: 1em;
+    padding: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    letter-spacing: .003em;
+    line-height: 1.2;
+}
+.section2 img, .section3 iframe {
+    width: 100%;
+}
+.section3 iframe {
+    overflow: hidden;
+    height: 45em;
+}
+.section3 .imgwrapper {
+    height: 100%;
+}
+/* ----- Gallery ------ */
+.section4 {
+    margin: 5% auto;
+    width: 80%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+}
+.section4 img {
+    height: 100%;
+    width: 100%;
+}
+.section2 img, .section3 img, .section4 img {
+    border-radius: 2px;
+}
+/* ------- Outro ------ */
+.section5 {
+    margin: 5% auto 3%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 2100px;
+}
+.section5 hr {
+    width: 95%;
+    margin: 2% auto;
+    align-self: center;
+}
+.txtwrap p {
+    columns: 2;
+    column-width: 20%;
+    column-fill: balance;
+    margin: 0 auto 2%;
+    width: 80%;
+    max-width: 1800px;
+}
+.history {
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    font-size: 1.8rem;
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+    color: var(--dark-grey);
+}
+
+/* ----- Footer ----- */
+.main-footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-bottom: 1px dotted var(--dark-grey);
+}
+/* ---- Footer form ---- */
+.footer-form-wrap {
+    align-self: center;
+}
+.footer-form-wrap h3 {
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    color: var(--white);
+    font-size: 2.2rem;
+    font-weight: 400;
+    padding: 1em 1em 1em 0;
+}
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0.4em;
+}
+.footer-form input {
+    padding: 1em;
+    margin-bottom: 2%;
+    max-width: 80%;
+}
+.footer-form textarea {
+    padding: 2em;
+}
+.footer-form .secondary-btn {
+    align-self: flex-start;
+    position: relative;
+    text-align: center;
+    background-color: var(--dark-orange);
+    border: 1px solid var(--bright-orange);
+    border-radius: 60px;
+    padding: 0.4em;
+    width: 55%;
+    margin-top: 0.5em;
+    transition: color 0.5s, background-color 0.5s ease-out;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--pale-red);
+}
+.footer-form .secondary-btn:hover {
+    background-color: var(--pale-red);
+    border: 1px solid var(--dark-orange);
+    color: var(--dark-orange);
+}
+/* -------- Footer navigation ------ */
+.site-map-wrapper {
+    align-self: center;
+}
+.site-map h3 {
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    color: var(--white);
+    font-size: 2.2rem;
+    font-weight: 400;
+    padding: 1em;
+}
+#contact,
+#events,
+#home,
+#house-garden,
+#maze-café,
+#prices,
+.footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0.4em;
+}
+#contact a,
+#events a,
+#home a,
+#house-garden a,
+#maze-café a,
+#prices a {
+    text-decoration: none;
+    color: var(--white);
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    font-size: 1.5rem;
+    transition: color 0.25s ease-out;
+}
+#contact a:hover,
+#events a:hover,
+#home a:hover,
+#house-garden a:hover,
+#maze-café a:hover,
+#prices a:hover {
+    color: var(--bright-orange);
+}
+#home a {
+    font-size: 1.5rem;
+}
+#contact,
+#events,
+#home,
+#prices {
+    align-self: center;
+}
+#house-garden,
+#maze-café {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* ----- Footer logo and contact information ------- */
+.footer-info-wrapper {
+    align-self: center;
+}
+/* ----- Footer logo ----- */
+.footer-logo-wrapper {
+    width: 20em;
+    display: block;
+    margin: 0 auto 3%;
+}
+.footer-logo-wrapper img {
+    width: 100%;
+    filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(142deg) brightness(105%) contrast(96%);
+}
+/* ------ Footer contact information ------ */
+.email ul,
+.phone ul {
+    margin-bottom: 0.5em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.email li,
+.phone li {
+    list-style: none;
+    display: inline-block;
+}
+.email img,
+.phone img {
+    width: 1.8em;
+    height: 1.8em;
+    position: relative;
+    top: 5px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg) brightness(106%) contrast(107%);
+}
+.email p,
+.phone p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding-left: 0.4em;
+}
+/* -------- Copyright ------- */
+.cr p {
+    color: var(--white);
+    text-align: right;
+    margin-right: 1%;
+}
+/* ------- Sponsors logos -------- */
+.sponsors {
+    margin: 0 auto;
+}
+.sponsors-logos {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 2% 0 0.5%;
+}
+.sponsors-logos img {
+    height: 60px;
+    display: block;
+}
+
+/* ----- Media Querries------*/
+
+/* ----- Media querries ----- */
+
+@media (max-width: 1500px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media (max-width: 1200px) {
+    html {
+        font-size: 12px;
+    }
+}
+@media (max-width: 1000px) {
+    html {
+        font-size: 10px;
+    }
+    .section2, .section3 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .section2 .textwrapper p,
+    .section3 .textwrapper p {
+        font-size: 2rem;
+    }
+    .imgwrapper {
+        width: 95%;
+    }
+    .section4 {
+        width: 90%;
+    }
+    .section5 .txtwrap p {
+        columns: 1;
+    }
+}
+@media (max-width: 900px) {
+    .hero-title h1 {
+        font-size: 5rem;
+    }
+    .hero-title h2 {
+        font-size: 1.9rem;
+    }
+}
+@media (max-width: 800px) {
+    html {
+        font-size: 9px;
+    }
+}
+@media (max-width: 600px) {
+    html {
+        font-size: 8px;
+    }
+}
+@media (max-width: 524px) {
+    .hero-title h1 {
+        font-size: 4rem;
+    }
+    .hero-title h2 {
+        font-size: 1.7rem;
+    }
+}
+@media (max-width: 520px) {
+    .main-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+    }
+    .footer-form-wrap {
+        width: 90%;
+    }
+    .footer-form .secondary-btn {
+        align-self: center;
+        width: 30%;
+        padding: 0.5em;
+        font-size: 1.7rem;
+    }
+    #contact a,
+    #events a,
+    #home a,
+    #house-garden a,
+    #maze-café a,
+    #prices a {
+        font-size: 1.7rem;
+    }
+    .footer-logo-wrapper {
+        width: 25em;
+    }
+    .email img,
+    .phone img {
+        top: 0;
+    }
+}

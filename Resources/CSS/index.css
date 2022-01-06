@@ -1,0 +1,731 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --pale-yellow: hsl(46.2, 100%, 97.5%);
+    --dark-gold: #8b7a34;
+    --golden-yellow: #b9a346;
+    --dark-grey: hsl(34.3, 5.8%, 23.7%);
+    --black: hsl(40, 4.2%, 13.9%);
+}
+
+/* ----- Global styles ------ */
+* {
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::selection {
+    background-color: var(--golden-yellow);
+}
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hwrap {
+    position: relative;
+    margin: 0 auto;
+}
+.mwrap {
+    position: relative;
+    margin: 0 auto;
+}
+.fwrap {
+    position: relative;
+    margin: 0 auto;
+    background-image: linear-gradient(hsl(0, 0%, 60%),hsl(0, 0%, 50%),hsl(0, 0%, 40%) , hsl(0, 0%, 30%), hsl(0, 0%, 20%));
+    background-repeat: no-repeat;
+}
+
+/* ----- Header ----- */
+header {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+/* ------ Navigation ------ */
+.nav-wrap-wrap {
+    position: relative;
+    margin: 0 auto;
+    height: auto;
+}
+.nav-wrap {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    z-index: 122;
+    margin: 0 auto;
+    width: 100vw;
+    height: 7em;
+    background-color: hsla(187, 2%, 98%, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    -o-backdrop-filter: blur(5px);
+    -ms-backdrop-filter: blur(5px);
+    box-shadow: 1px 1px 10px 0 hsla(0, 0%, 0%, 0.07);
+}
+/* ---- Navigation logo ----- */
+.logo-wrap {
+    width: 8%;
+    height: auto;
+}
+.logo-wrap img {
+    width: 100%;
+    height: auto;
+    min-width: 100px;
+    vertical-align: middle;
+}
+/* ------ Main navigation -------- */
+.main-nav-bar li {
+    list-style: none;
+    display: inline-block;
+}
+.main-nav-bar li a {
+    float: left;
+    font-size: 1.3rem;
+    color: var(--black);
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5em;
+    border-bottom: 1px solid transparent;
+    font-weight: 400;
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    text-transform: uppercase;
+}
+.main-nav-bar #active-page,
+.main-nav-bar li a:hover {
+    color: var(--golden-yellow);
+    border-bottom: var(--golden-yellow) 1px solid;
+    transition: color 0.25s ease-out;
+}
+/* ------- Hero Banner ------- */
+.hero {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: 2100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+/* ------- Main & secondary images -------- */
+.hero-image {
+    grid-area: 1 / 1;
+    position: relative;
+    z-index: -2;
+    width: 100%;
+}
+.hero-image .main-img {
+    width: 100%;
+    filter: contrast(95%) saturate(105%);
+}
+/* ----- Oppacity layer ---- */
+.transparent-layer {
+    grid-area: 1 / 1;
+    position: relative;
+    z-index: 1;
+    background: hsla(0, 0%, 10%, 0.4);
+    width: 100%;
+    height: 99%;
+}
+/* ----- Hero title, text and button ----- */
+.hero-title {
+    grid-area: 1 / 1;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-title h1,
+.hero-title h2 {
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    color: var(--white);
+    line-height: 1.2;
+}
+.hero-title h1 {
+    font-size: 7rem;
+}
+.hero-title h2 {
+    font-size: 3rem;
+    font-style: italic;
+}
+hr {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10%;
+    background-color: var(--pale-yellow);
+}
+.hero-title .main-btn {
+    text-align: center;
+    background-color: var(--dark-gold);
+    border: 1px solid var(--golden-yellow);
+    border-radius: 60px;
+    padding: 0.7em;
+    margin-top: 1em;
+    transition: color 0.5s, background-color 0.5s ease-out;
+}
+.hero-title .main-btn a {
+    font-size: 2.2rem;
+    padding: 0.8em;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--pale-yellow);
+}
+.hero-title .main-btn:hover {
+    background-color: var(--pale-yellow);
+    border: 1px solid var(--dark-gold);
+}
+.hero-title .main-btn a:hover {
+    color: var(--dark-gold);
+}
+
+/* ------- Main -------- */
+.main-page-content {
+    display: flex;
+    flex-direction: column;
+}
+/* ------- Banner ------- */
+.section1 {
+    margin: 2% auto 4%;
+    width: 100%;
+    max-width: 2100px;
+}
+.section1 h2 {
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    font-size: 3rem;
+    padding: 1em;
+}
+.section1 img {
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+}
+/* -------- Site presentation ------- */
+.section2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 2100px;
+    margin: 0 auto;
+}
+/* -------- On-page navigation and media links ----- */
+.section2-intro {
+    width: 100%;
+    margin: 0 auto 1%;
+}
+.section2-intro-components {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+/* ------ On-page navigation ------- */
+.small-navigation {
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+}
+.small-navigation a {
+    padding: 1em 1em 1em 0.6em;
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.4em;
+    transition: color 0.25s ease-out;
+}
+.small-navigation a:hover {
+    color: var(--golden-yellow);
+}
+.small-navigation #active-link {
+    color: var(--golden-yellow);
+    border-bottom: 1px solid var(--golden-yellow);
+}
+/* ------- Media links ----- */
+.mediawrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2%;
+}
+.media h3 {
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+    font-weight: 400;
+}
+.media-logos {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1%;
+}
+.media-logos img {
+    width: 3.2em;
+    height: 3.2em;
+    margin-left: 5px;
+}
+/* ----- Media logos filter effects on hover ----- */
+.fb:hover {
+    filter: invert(33%) sepia(10%) saturate(3744%) hue-rotate(183deg) brightness(99%) contrast(92%);
+    transition: filter 0.2s ease-out;
+}
+.ig:hover {
+    filter: invert(29%) sepia(82%) saturate(931%) hue-rotate(270deg) brightness(90%) contrast(96%);
+    transition: filter 0.2s ease-out;
+}
+.tw:hover {
+    filter: invert(44%) sepia(92%) saturate(674%) hue-rotate(160deg) brightness(99%) contrast(96%);
+    transition: filter 0.2s ease-out;
+}
+.pt:hover {
+    filter: invert(8%) sepia(89%) saturate(5316%) hue-rotate(340deg) brightness(113%) contrast(122%);
+    transition: filter 0.2s ease-out;
+}
+.section2-intro hr {
+    display: block;
+    margin: 2% auto 0;
+    width: 95%;
+}
+/* -------- Main articles ------- */
+.café-presentation,
+.garden-presentation,
+.house-presentation,
+.maze-presentation {
+    margin: 5% auto;
+    width: 100%;
+}
+.house-presentation .main-article,
+.maze-presentation .main-article {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.café-presentation .main-article,
+.garden-presentation .main-article {
+    display: flex;
+}
+.article-img-wrap {
+    flex: 1;
+    margin: 0 auto;
+}
+.article-img-wrap img {
+    width: 100%;
+    border-radius: 2px;
+    margin: 0 auto;
+    display: block;
+}
+.article-text-wrap {
+    flex: 1;
+    color: var(--black);
+    line-height: 1.5;
+    justify-self: center;
+    align-self: center;
+}
+.main-article h2 {
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    font-size: 5rem;
+    margin-left: 2em;
+    padding: 1em;
+}
+.café-presentation .main-article h2,
+.garden-presentation .main-article h2 {
+    text-align: right;
+    margin-left: 0;
+    margin-right: 2em;
+}
+.main-article p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.8rem;
+    text-indent: 1em;
+    padding: 2.5em;
+}
+.main-article a {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    color: var(--black);
+    float: right;
+    text-decoration: none;
+    background-size: 0 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size, color, 300ms ease;
+}
+.café-presentation .main-article a,
+.garden-presentation .main-article a {
+    float: left;
+    margin-right: 0;
+}
+.main-article a:hover {
+    background-size: 100% 2px;
+}
+/* ------- Different gradient underline effects & --------------/
+/-------- text colours on hover for the pages links ------ */
+#house-page-link {
+    background-image: linear-gradient(90deg, #ff2a2b, #c70000, #88000c);
+}
+#garden-page-link {
+    background-image: linear-gradient(90deg, #03ea3f, #02b02f, #017e22);
+}
+#maze-page-link {
+    background-image: linear-gradient(90deg, #ffbe09, #dea300, #be8b00);
+}
+#café-page-link {
+    background-image: linear-gradient(90deg, #315bff, #002ee1, #00209d);
+}
+#house-page-link:hover {
+    color: #c70000;
+}
+#garden-page-link:hover {
+    color: #02b02f;
+}
+#maze-page-link:hover {
+    color: #dea300;
+}
+#café-page-link:hover {
+    color: #002ee1;
+}
+/* ---- Images polygon shapes ----- */
+.house-presentation img,
+.maze-presentation img {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+}
+.café-presentation img,
+.garden-presentation img {
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+}
+/* ------ Outro ------- */
+.section3 {
+    margin: 7% auto 3%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 2100px;
+}
+.section3 hr {
+    width: 95%;
+    margin: 2% auto;
+    align-self: center;
+}
+.txtwrap p {
+    columns: 2;
+    column-width: 20%;
+    column-fill: balance;
+    margin: 0 auto 2%;
+    width: 80%;
+    max-width: 1800px;
+}
+.history {
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    font-size: 1.8rem;
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+    color: var(--dark-grey);
+}
+
+/* ----- Footer ----- */
+.main-footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-bottom: 1px dotted var(--dark-grey);
+}
+/* ---- Footer form ---- */
+.footer-form-wrap {
+    align-self: center;
+}
+.footer-form-wrap h3 {
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    color: var(--white);
+    font-size: 2.2rem;
+    font-weight: 400;
+    padding: 1em 1em 1em 0;
+}
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0.4em;
+}
+.footer-form input {
+    padding: 1em;
+    margin-bottom: 2%;
+    max-width: 80%;
+}
+.footer-form textarea {
+    padding: 2em;
+}
+.footer-form .secondary-btn {
+    align-self: flex-start;
+    position: relative;
+    text-align: center;
+    background-color: var(--dark-gold);
+    border: 1px solid var(--golden-yellow);
+    border-radius: 60px;
+    padding: 0.4em;
+    width: 55%;
+    margin-top: 0.5em;
+    transition: color 0.5s, background-color 0.5s ease-out;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--pale-yellow);
+}
+.footer-form .secondary-btn:hover {
+    background-color: var(--pale-yellow);
+    border: 1px solid var(--dark-gold);
+    color: var(--dark-gold);
+}
+/* -------- Footer navigation ------ */
+.site-map-wrapper {
+    align-self: center;
+}
+.site-map h3 {
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    color: var(--white);
+    font-size: 2.2rem;
+    font-weight: 400;
+    padding: 1em;
+}
+#contact,
+#events,
+#home,
+#house-garden,
+#maze-café,
+#prices,
+.footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0.4em;
+}
+#contact a,
+#events a,
+#home a,
+#house-garden a,
+#maze-café a,
+#prices a {
+    text-decoration: none;
+    color: var(--white);
+    font-family: 'Bauer Bodoni', 'Bondoni Italic', 'Baskervville', serif;
+    font-size: 1.5rem;
+    transition: color 0.25s ease-out;
+}
+#contact a:hover,
+#events a:hover,
+#home a:hover,
+#house-garden a:hover,
+#maze-café a:hover,
+#prices a:hover {
+    color: var(--golden-yellow);
+}
+#home a {
+    font-size: 1.5rem;
+}
+#contact,
+#events,
+#home,
+#prices {
+    align-self: center;
+}
+#house-garden,
+#maze-café {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* ----- Footer logo and contact information ------- */
+.footer-info-wrapper {
+    align-self: center;
+}
+/* ----- Footer logo ----- */
+.footer-logo-wrapper {
+    width: 20em;
+    display: block;
+    margin: 0 auto 3%;
+}
+.footer-logo-wrapper img {
+    width: 100%;
+    filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(142deg) brightness(105%) contrast(96%);
+}
+/* ------ Footer contact information ------ */
+.email ul,
+.phone ul {
+    margin-bottom: 0.5em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.email li,
+.phone li {
+    list-style: none;
+    display: inline-block;
+}
+.email img,
+.phone img {
+    width: 1.8em;
+    height: 1.8em;
+    position: relative;
+    top: 5px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(161deg) brightness(106%) contrast(107%);
+}
+.email p,
+.phone p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding-left: 0.4em;
+}
+/* -------- Copyright ------- */
+.cr p {
+    color: var(--white);
+    text-align: right;
+    margin-right: 1%;
+}
+/* ------- Sponsors logos -------- */
+.sponsors {
+    margin: 0 auto;
+}
+.sponsors-logos {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 2% 0 0.5%;
+}
+.sponsors-logos img {
+    height: 60px;
+    display: block;
+}
+
+/* ----- Media querries ----- */
+
+@media (max-width: 1500px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media (max-width: 1200px) {
+    html {
+        font-size: 12px;
+    }
+}
+@media (max-width: 1000px) {
+    html {
+        font-size: 10px;
+    }
+    .café-presentation .main-article,
+    .garden-presentation .main-article,
+    .house-presentation .main-article,
+    .maze-presentation .main-article {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .article-img-wrap img {
+        clip-path: none;
+        width: 95%;
+    }
+    .café-presentation .main-article h2,
+    .garden-presentation .main-article h2 {
+        text-align: left;
+        margin-right: 0;
+        margin-left: 2em;
+    }
+    .main-article a {
+        margin-bottom: 2%;
+        margin-right: 2%;
+    }
+    .café-presentation .main-article a,
+    .garden-presentation .main-article a {
+        float: right;
+    }
+    .section3 .txtwrap p {
+        columns: 1;
+    }
+}
+@media (max-width: 900px) {
+    .hero-title h1 {
+        font-size: 5rem;
+    }
+    .hero-title h2 {
+        font-size: 2rem;
+    }
+    .hero-title .main-btn {
+        padding: 0.5em;
+    }
+    .hero-title .main-btn a {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 800px) {
+    html {
+        font-size: 9px;
+    }
+}
+@media (max-width: 600px) {
+    html {
+        font-size: 8px;
+    }
+}
+@media (max-width: 524px) {
+    .hero-title {
+        justify-content: flex-end;
+        margin-bottom: 5%;
+    }
+    .hero-title h1 {
+        font-size: 4rem;
+    }
+    .hero-title h2 {
+        font-size: 1.8rem;
+    }
+    .hero-title .main-btn {
+        padding: 0.4em;
+    }
+    .hero-title .main-btn a {
+        font-size: 1.7rem;
+    }
+}
+@media (max-width: 520px) {
+    .main-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+    }
+    .footer-form-wrap {
+        width: 90%;
+    }
+    .footer-form .secondary-btn {
+        align-self: center;
+        width: 30%;
+        padding: 0.5em;
+        font-size: 1.7rem;
+    }
+    #contact a,
+    #events a,
+    #home a,
+    #house-garden a,
+    #maze-café a,
+    #prices a {
+        font-size: 1.7rem;
+    }
+    .footer-logo-wrapper {
+        width: 25em;
+    }
+    .email img,
+    .phone img {
+        top: 0;
+    }
+}
