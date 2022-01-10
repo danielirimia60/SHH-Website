@@ -88,6 +88,9 @@ header {
     list-style: none;
     display: inline-block;
 }
+.main-nav-bar li button {
+    display: none;
+}
 .main-nav-bar li a {
     float: left;
     font-size: 1.3rem;
