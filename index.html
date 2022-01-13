@@ -41,15 +41,11 @@
                                 src="./Resources/Images/logo.svg"
                                 alt="Logo presenting the image of Stephenson's Historic house"/></a>
                         </div>
-                        <nav class="main-nav-bar">
+                        <button class="mobile-nav-toggle" aria-expanded="false" 
+                        aria-controls="primary-navigation">
+                        </button>
+                        <nav class="main-nav-bar" id="primary-navigation" data-visible="false">
                             <ul>
-                                <li>
-                                    <button aria-expanded="false">
-                                        <img src="Resources/Images/Hamburger-menu-logo.svg"
-                                        alt="Hamburger menu logo made out of 3 horizontally 
-                                        aligned lines">
-                                    </button>
-                                </li>
                                 <li>
                                     <a id="active-page" href="index.html">Home</a>
                                 </li>
@@ -403,5 +399,7 @@
                 </div>
             </div>
         </div>
+    <!--Mobile navigation toggle-->
+    <script src="Resources/Components/nav.js"></script>
     </body>
 </html>
