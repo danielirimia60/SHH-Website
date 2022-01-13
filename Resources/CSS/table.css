@@ -371,13 +371,13 @@ header {
     font-family: 'Gill Sans Regular', 'Gill Sans', serif;
     font-style: italic;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     letter-spacing: 0.03em;
     margin-left: 1%;
 }
 .title h4 {
     font-family: 'Baskervville', serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 500;
     padding: .5em;
     margin: 0 0 0.2em 0;
@@ -387,7 +387,7 @@ header {
 }
 .title p {
     font-family: 'Gill Sans Regular', 'Gill Sans', serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 400;
     padding: 0.5em 1em;
     text-align: center;
@@ -415,6 +415,13 @@ header {
     content: '✔';
     opacity: 1;
     margin: 0 0.7em 0 1em;
+}
+.prices {
+    display: flex;
+}
+.prices-wrap {
+    align-self: center;
+    width: 100%;
 }
 .prices h4, .prices p {
     font-family: 'Gill Sans Regular', 'Gill Sans', serif;
@@ -675,6 +682,52 @@ header {
 @media (max-width: 800px) {
     html {
         font-size: 9px;
+    }
+}
+@media (max-width: 750px) {
+    .table1 {
+        width: 98%;
+    }
+    .table2 {
+        width: 98%;
+    }
+    .title h4 {
+        font-size: 2rem;
+    }
+    .title p {
+        font-size: 1.7rem;
+    }
+    .info p {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    .features li{
+        font-size: 1.8rem;
+        padding-right: 6%;
+    }
+    .prices h4 {
+        font-size: 1.7rem;
+    }
+    .prices p {
+        font-size: 1.6rem;
+    }
+    .prices .price em {
+        font-size: 1.6rem;
+    }
+    .pack-divider, .garden, .maze {
+        flex-direction: column;
+    }
+    .features {
+        align-items: center;
+        flex-direction: row;
+        padding: 1% 0 1% 0;
+    }
+    .prices {
+        justify-content: center;
+    }
+    .prices-wrap {
+        width: 60%;
+        padding: 1% 0 1% 0;
     }
 }
 @media (max-width: 600px) {
