@@ -27,6 +27,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 .hwrap {
     position: relative;
@@ -88,7 +89,7 @@ header {
     list-style: none;
     display: inline-block;
 }
-.main-nav-bar li button {
+.mobile-nav-toggle {
     display: none;
 }
 .main-nav-bar li a {
@@ -691,25 +692,34 @@ hr {
     .logo-wrap {
         margin: 0 auto;
         position: relative;
+        left: -2%;
     }
-    .main-nav-bar li button {
+    .mobile-nav-toggle {
         display: block;
-        height: 2em;
+        background-image: url('../Images/Hamburger-menu-logo.svg');
+        background-color: transparent;
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 222;
         width: 2em;
-        align-self: flex-end;
-        margin: 3em 5em 3em 0;
+        aspect-ratio: 1;
+        inset: 25% 0 0 85%;
         border: none;
+        cursor: pointer;
     }
+    .main-nav-bar[data-visible="true"] {
+        transform: translateX(0%);
+        transform: translateY(57.8%);
+
+    }
+
     .main-nav-bar {
         background-color: hsla(187, 2%, 98%, 1);
-        transform: translateY(37%);
-        width: 50%;
-        backdrop-filter: blur(50px);
-        -webkit-backdrop-filter: blur(5px);
-        -moz-backdrop-filter: blur(5px);
-        -o-backdrop-filter: blur(5px);
-        -ms-backdrop-filter: blur(5px);
-        box-shadow: 1px 1px 10px 0 hsla(0, 0%, 0%, 0.07);
+        transform: translateX(100%);
+        transform: translateY(-57.8%);
+        width: 70%;
+        padding: 2% 0;
+        transition: transform 300ms ease;
     }
     .main-nav-bar li {
         display: flex;
@@ -721,7 +731,7 @@ hr {
         padding: 1em 0;
         border: 0;
         color: var(--black);
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 600;
     }
     .main-nav-bar #active-page,
