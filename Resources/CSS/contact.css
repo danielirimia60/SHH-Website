@@ -4,7 +4,7 @@
     --dark-blue: hsl(215, 100%, 40%);
     --bright-blue: hsl(215, 100%, 60%);
     --dark-grey: hsl(34.3, 5.8%, 23.7%);
-    --black: hsl(40, 4.2%, 13.9%);
+    --black: hsl(40, 4.2%, 0%);
 }
 
 /* ----- Global styles ------ */
@@ -65,8 +65,8 @@ header {
     margin: 0 auto;
     width: 100vw;
     height: 7em;
-    background-color: hsla(187, 2%, 98%, 0.5);
-    backdrop-filter: blur(20px);
+    background-color: hsla(187, 2%, 98%, 0.4);
+    backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     -moz-backdrop-filter: blur(5px);
     -o-backdrop-filter: blur(5px);
@@ -685,7 +685,6 @@ label {
 @media (max-width: 750px) {
     .nav-wrap {
         justify-content: space-between;
-        background-color: hsla(187, 2%, 98%, 1);
     }
     .logo-wrap {
         margin: 0 auto;
@@ -707,10 +706,8 @@ label {
     }
     .main-nav-bar[data-visible="true"] {
         transform: translateX(0%);
-        transform: translateY(57.8%);
-
+        transform: translateY(57.6%);
     }
-
     .main-nav-bar {
         background-color: hsla(187, 2%, 98%, 1);
         transform: translateX(100%);
