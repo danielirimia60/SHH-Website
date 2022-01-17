@@ -27,6 +27,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 .hwrap {
     position: relative;
@@ -87,6 +88,9 @@ header {
 .main-nav-bar li {
     list-style: none;
     display: inline-block;
+}
+.mobile-nav-toggle {
+    display: none;
 }
 .main-nav-bar li a {
     float: left;
@@ -312,14 +316,132 @@ header {
 .section4 {
     margin: 5% auto;
     width: 80%;
+}
+.gallery-images-click {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 2px;
 }
+.gallery-img-wrap {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
 .section4 img {
     height: 100%;
     width: 100%;
+    grid-area: 1 / 1;
+    position: relative;
+    z-index: -1;
+}
+.gallery-img-title {
+    grid-area: 1 / 1;
+    position: relative;
+    z-index: 15;
+    justify-self: center;
+    align-self: center;
+    color: var(--white);
+    opacity: 0;
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+.opacity-filter {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+    grid-area: 1 / 1;
+}
+.section4 .gallery-img-wrap:hover {
+    transform: scale(1.007);
+    transition: transform 2000ms ease;
+    cursor: pointer;
+}
+.section4 .gallery-img-wrap:hover > .gallery-img-title {
+    opacity: 1;
+    transition: opacity 600ms ease-out;
+}
+.section4 .gallery-img-wrap:hover > .opacity-filter {
+    background-color: hsla(0, 0%, 0%, 0.5);
+    transition: background-color 600ms ease;
+}
+/* --------- Lightbox styles -------- */
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 150;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.92);
+}
+/* Modal Content */
+.modal-content {
+    position: relative;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(1800px, 90%);
+}
+/* The Close Button */
+.close {
+    color: #fff;
+    position: absolute;
+    z-index: 200;
+    top: 10px;
+    right: 25px;
+    font-size: clamp(35px, 2.5rem, 3em);
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #b1b1b1;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Hide the slides by default */
+.mySlides {
+    display: none;
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 1em;
+  padding-left: 1.5%;
+  color: #fff;
+  opacity: 0.7;
+  font-weight: bold;
+  font-size: clamp(40px, 3rem, 4em);
+  transition: 600ms ease;
+  border-radius: 0 4px 4px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    padding-right: 1.5%;
+    border-radius: 4px 0 0 4px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 1;
 }
 .section2 img, .section3 img, .section4 img {
     border-radius: 2px;
@@ -577,6 +699,61 @@ header {
 @media (max-width: 800px) {
     html {
         font-size: 9px;
+    }
+}
+@media (max-width: 750px) {
+    .nav-wrap {
+        justify-content: space-between;
+        background-color: hsla(187, 2%, 98%, 1);
+    }
+    .logo-wrap {
+        margin: 0 auto;
+        position: relative;
+        left: -2%;
+    }
+    .mobile-nav-toggle {
+        display: block;
+        background-image: url('../Images/Hamburger-menu-logo.svg');
+        background-color: transparent;
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 222;
+        width: 2em;
+        aspect-ratio: 1;
+        inset: 25% 0 0 85%;
+        border: none;
+        cursor: pointer;
+    }
+    .main-nav-bar[data-visible="true"] {
+        transform: translateX(0%);
+        transform: translateY(57.8%);
+
+    }
+
+    .main-nav-bar {
+        background-color: hsla(187, 2%, 98%, 1);
+        transform: translateX(100%);
+        transform: translateY(-57.8%);
+        width: 70%;
+        padding: 2% 0;
+        transition: transform 300ms ease;
+    }
+    .main-nav-bar li {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-items: center;
+    }
+    .main-nav-bar li a {
+        padding: 1em 0;
+        border: 0;
+        color: var(--black);
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+    .main-nav-bar #active-page,
+    .main-nav-bar li a:hover {
+        border: none;
     }
 }
 @media (max-width: 600px) {
