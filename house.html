@@ -24,6 +24,9 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap"
             rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" 
+            rel="stylesheet">
     </head>
 
     <!--Body starts-->
@@ -41,7 +44,10 @@
                                 src="./Resources/Images/logo.svg"
                                 alt="Logo presenting the image of Stephenson's Historic house"/></a>
                         </div>
-                        <nav class="main-nav-bar">
+                        <button class="mobile-nav-toggle" aria-expanded="false" 
+                        aria-controls="primary-navigation">
+                        </button>
+                        <nav class="main-nav-bar" id="primary-navigation" data-visible="false">
                             <ul>
                                 <li>
                                     <a href="index.html">Home</a>
@@ -182,19 +188,81 @@
                     </div>
                 </div>
                 <!--Gallery-->
-                <div class="section4">
-                    <img 
-                        src="Resources/Images/hall.jpg"     
-                        alt="Image from the hall with a sculpted wood stair and lights on the sides"/>
-                    <img
-                        src="./Resources/Images/workshop.jpg" 
-                        alt="Image from above the workshop with lights on the walls and a window in between them"/>
-                    <img
-                        src="Resources/Images/dining room.jpg"
-                        alt="Image of the dining room with a large antique table and chairs around it"/>
-                    <img
-                        src="Resources/Images/office item.jpg"
-                        alt="Image of two antique statues resembling two bronze lions and books in the background"/>
+                <section class="section4">
+                    <!-- Images used to open the lightbox -->
+                    <div class="gallery-images-click">
+                        <div class="gallery-img-wrap" onclick="openModal();currentSlide(1)">
+                            <img 
+                            src="Resources/Images/hall.jpg"     
+                            alt="Image from the hall with a sculpted wood stair and lights on the sides"/>
+                            <h4 class="gallery-img-title">The hall</h4>
+                            <div class="opacity-filter"></div>
+                        </div>
+                        <div class="gallery-img-wrap" onclick="openModal();currentSlide(2)">
+                            <img
+                            src="./Resources/Images/workshop.jpg" 
+                            alt="Image from above the workshop with lights on the walls and a window in between them"/>
+                            <h4 class="gallery-img-title">The workshop</h4>
+                            <div class="opacity-filter"></div>
+                        </div>
+                        <div class="gallery-img-wrap" onclick="openModal();currentSlide(3)">
+                            <img
+                            src="Resources/Images/dining room.jpg"
+                            alt="Image of the dining room with a large antique table and chairs around it"/>
+                            <h4 class="gallery-img-title">The dining room</h4>
+                            <div class="opacity-filter"></div>
+                        </div>
+                        <div class="gallery-img-wrap" onclick="openModal();currentSlide(4)">
+                            <img
+                            src="Resources/Images/office item.jpg"
+                            alt="Image of two antique statues resembling two bronze lions and books in the background"/>
+                            <h4 class="gallery-img-title">Antique statues</h4>
+                            <div class="opacity-filter"></div>
+                        </div>
+                    </div>
+                </section>
+                <!-- The Modal/Lightbox -->
+                <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+                
+                        <div class="mySlides">
+                            <img 
+                            src="Resources/Images/house-lightbox-1.jpg"
+                            alt="Image from the hall with a sculpted wood stair and lights on the sides" 
+                            style="width:100%"
+                            >
+                        </div>
+                        <div class="mySlides">
+                            <img src="Resources/Images/house-lightbox-2.jpg" 
+                            style="width:100%"
+                            alt="Image from above the workshop with lights on the walls and a window in between them">
+                        </div>                        
+                        <div class="mySlides">
+                            <img src="Resources/Images/house-lightbox-3.jpg" 
+                            style="width:100%"
+                            alt="Image of the dining room with a large antique table and chairs around it">
+                        </div>
+                        <div class="mySlides">
+                            <img src="Resources/Images/house-lightbox-4.jpg" 
+                            style="width:100%"
+                            alt="Image of two antique statues resembling two bronze lions and books in the background">
+                        </div>
+                        <div class="mySlides">
+                            <img src="Resources/Images/house-lightbox-5.jpg" 
+                            style="width:100%"
+                            alt="Image of George Stephenson's office with desk, chairs, books and paintings">
+                        </div>
+                        <div class="mySlides">
+                            <img src="Resources/Images/house-lightbox-6.jpg" 
+                            style="width:100%"
+                            alt="Image of the library with many books on the background and an antique earth globe in the foreground">
+                        </div>
+                    
+                        <!-- Next/previous controls -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
                 </div>
                 <!--Page outro-->
                 <div class="section5">
@@ -342,6 +410,10 @@
 
                 </div>
             </div>
-        </div> 
+        </div>
+        <!--Mobile navigation toggle-->
+        <script src="Resources/Components/nav.js"></script>
+        <!--Lightbox gallery-->
+        <script src="Resources/Components/gallery.js"></script>
     </body>
 </html>
