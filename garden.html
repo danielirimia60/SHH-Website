@@ -24,6 +24,9 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap"
             rel="stylesheet">
+         <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" 
+            rel="stylesheet">
     </head>
 
     <!--Body starts-->
@@ -41,7 +44,10 @@
                                 src="./Resources/Images/logo.svg"
                                 alt="Logo presenting the image of Stephenson's Historic house"/></a>
                         </div>
-                        <nav class="main-nav-bar">
+                        <button class="mobile-nav-toggle" aria-expanded="false" 
+                        aria-controls="primary-navigation">
+                        </button>
+                        <nav class="main-nav-bar" id="primary-navigation" data-visible="false">
                             <ul>
                                 <li>
                                     <a href="index.html">Home</a>
@@ -183,18 +189,80 @@
                 </div>
                 <!--Gallery-->
                 <div class="section4">
-                    <img 
-                        src="Resources/Images/park 2.jpg"     
-                        alt="Image with people sitting on grass in the park with trees and other people in the background"/>
-                    <img
-                        src="./Resources/Images/garden.jpg" 
-                        alt="Picture of the garden with trees, flowers and a small river in the foreground and a meadow in the background"/>
-                    <img
-                        src="Resources/Images/lake.jpg"
-                        alt="Image of a lake in the foreground and its shore in the background with trees along it"/>
-                    <img
-                        src="Resources/Images/park.jpg"
-                        alt="Picture of the park in the autum with leafs fallen from the trees on the ground and benches on the side"/>
+                    <!-- Images used to open the lightbox -->
+                    <div class="gallery-images-click">
+                        <div class="gallery-img-wrap" onclick="openModal();currentSlide(1)">
+                            <img 
+                            src="Resources/Images/park 2.jpg"     
+                            alt="Image with people sitting on grass in the park with trees and other people in the background"/>
+                            <h4 class="gallery-img-title">The park</h4>
+                            <div class="opacity-filter"></div>
+                        </div>
+                        <div class="gallery-img-wrap" onclick="openModal();currentSlide(2)">
+                            <img
+                            src="./Resources/Images/garden.jpg" 
+                            alt="Picture of the garden with trees, flowers and a small river in the foreground and a meadow in the background"/>
+                            <h4 class="gallery-img-title">The creek</h4>
+                            <div class="opacity-filter"></div>
+                        </div>
+                        <div class="gallery-img-wrap" onclick="openModal();currentSlide(3)">
+                            <img
+                            src="Resources/Images/lake.jpg"
+                            alt="Image of a lake in the foreground and its shore in the background with trees along it"/>
+                            <h4 class="gallery-img-title">The lake</h4>
+                            <div class="opacity-filter"></div>
+                        </div>
+                        <div class="gallery-img-wrap" onclick="openModal();currentSlide(4)">
+                            <img
+                            src="Resources/Images/park.jpg"
+                            alt="Picture of the park in the autum with leafs fallen from the trees on the ground and benches on the side"/>
+                            <h4 class="gallery-img-title">The alley</h4>
+                            <div class="opacity-filter"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Modal/Lightbox -->
+                <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+                
+                        <div class="mySlides">
+                            <img 
+                            src="Resources/Images/garden-lightbox-1.jpg"
+                            alt="Image with people sitting on grass in the park with trees and other people in the background" 
+                            style="width:100%"
+                            >
+                        </div>
+                        <div class="mySlides">
+                            <img src="Resources/Images/garden-lightbox-2.jpg" 
+                            style="width:100%"
+                            alt="Picture of the garden with trees, flowers and a small river in the foreground and a meadow in the background">
+                        </div>                        
+                        <div class="mySlides">
+                            <img src="Resources/Images/garden-lightbox-3.jpg" 
+                            style="width:100%"
+                            alt="Image of a lake in the foreground and its shore in the background with trees along it">
+                        </div>
+                        <div class="mySlides">
+                            <img src="Resources/Images/garden-lightbox-4.jpg" 
+                            style="width:100%"
+                            alt="Picture of the park in the autum with leafs fallen from the trees on the ground and benches on the side">
+                        </div>
+                        <div class="mySlides">
+                            <img src="Resources/Images/garden-lightbox-5.jpg" 
+                            style="width:100%"
+                            alt="Picture of the gardens showing a pathway with trees and flowers on the sides">
+                        </div>
+                        <div class="mySlides">
+                            <img src="Resources/Images/garden-lightbox-6.jpg"
+                            style="width:100%"
+                            alt="Image of the lake with a wooden pond in the foreground and trees around the lake in the background">
+                        </div>
+                    
+                        <!-- Next/previous controls -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
                 </div>
                 <!--Page outro-->
                 <div class="section5">
@@ -341,5 +409,9 @@
                 </div>
             </div>
         </div> 
+        <!--Mobile navigation toggle-->
+        <script src="Resources/Components/nav.js"></script>
+        <!--Lightbox gallery-->
+        <script src="Resources/Components/gallery.js"></script>
     </body>
 </html>
