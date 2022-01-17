@@ -24,6 +24,9 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap"
             rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" 
+            rel="stylesheet">
     </head>
 
     <!--Body starts-->
@@ -41,7 +44,10 @@
                                 src="./Resources/Images/logo.svg"
                                 alt="Logo presenting the image of Stephenson's Historic house"/></a>
                         </div>
-                        <nav class="main-nav-bar">
+                        <button class="mobile-nav-toggle" aria-expanded="false" 
+                        aria-controls="primary-navigation">
+                        </button>
+                        <nav class="main-nav-bar" id="primary-navigation" data-visible="false">
                             <ul>
                                 <li>
                                     <a href="index.html">Home</a>
@@ -472,6 +478,8 @@
 
                 </div>
             </div>
-        </div> 
+        </div>
+        <!--Mobile navigation toggle-->
+        <script src="Resources/Components/nav.js"></script>
     </body>
 </html>
