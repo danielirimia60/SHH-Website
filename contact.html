@@ -24,6 +24,9 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap"
             rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" 
+            rel="stylesheet">
         
         <!--Google maps-->
         <script
@@ -49,7 +52,10 @@
                                 src="./Resources/Images/logo.svg"
                                 alt="Logo presenting the image of Stephenson's Historic house"/></a>
                         </div>
-                        <nav class="main-nav-bar">
+                        <button class="mobile-nav-toggle" aria-expanded="false" 
+                        aria-controls="primary-navigation">
+                        </button>
+                        <nav class="main-nav-bar" id="primary-navigation" data-visible="false">
                             <ul>
                                 <li>
                                     <a href="index.html">Home</a>
@@ -107,8 +113,43 @@
         <div class="mwrap">
             <div class="main-content">
 
-                <!--Contact information, media links and google maps-->
-                <div class="section1">
+                <!--Contact form and image-->
+                <div class="section2">
+                    
+                    <!--Contact form-->
+                    <div class="contact-form">
+                        <form class="c-form">
+                            <label title="name">First name</label>
+                            <input id="c-name" type="text" required>
+                            <label title="name">Second name</label>
+                            <input id="c-name" type="name" required>
+                            <label title="email">Email adress</label>
+                            <input id="email-a" type="text" required>
+                            <label title="purpose">Purpose</label>
+                            <input id="c-opt" type="text" list="options" placeholder="Choose 1"  required>
+                            <datalist id="options">
+                                <option>General question</option>
+                                <option>Opening times</option>
+                                <option>Prices</option>
+                                <option>COVID-19 restrictions</option>
+                                <option>Suggestions</option>
+                                <option>Business enquieries</option>
+                            </datalist>
+                            <label title="text area">Write your text here</label>
+                            <textarea id="f-text" required></textarea>
+                            <button class="primary-btn btn" type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <!--Contact image-->
+                    <div class="contact-imgwrap">
+                        <img
+                            src="Resources/Images/FAQs.jpg"
+                            alt="Picture of a open book with a pen and watch on top of it">
+                    </div>
+                </div>
+
+                 <!--Contact information, media links and google maps-->
+                 <div class="section1">
                     <div class="info-mediawrap">
                         <div class="infowrap">
                             <div class="contact-phone">
@@ -146,41 +187,6 @@
                         </div>
                     </div>
                     <div id="map"></div>
-                </div>
-
-                <!--Contact form and image-->
-                <div class="section2">
-                    
-                    <!--Contact form-->
-                    <div class="contact-form">
-                        <form class="c-form">
-                            <label title="name">First name</label>
-                            <input id="c-name" type="text" required>
-                            <label title="name">Second name</label>
-                            <input id="c-name" type="name" required>
-                            <label title="email">Email adress</label>
-                            <input id="email-a" type="text" required>
-                            <label title="purpose">Purpose</label>
-                            <input id="c-opt" type="text" list="options" placeholder="Choose 1"  required>
-                            <datalist id="options">
-                                <option>General question</option>
-                                <option>Opening times</option>
-                                <option>Prices</option>
-                                <option>COVID-19 restrictions</option>
-                                <option>Suggestions</option>
-                                <option>Business enquieries</option>
-                            </datalist>
-                            <label title="text area">Write your text here</label>
-                            <textarea id="f-text" required></textarea>
-                            <button class="primary-btn btn" type="submit">Submit</button>
-                        </form>
-                    </div>
-                    <!--Contact image-->
-                    <div class="contact-imgwrap">
-                        <img
-                            src="Resources/Images/FAQs.jpg"
-                            alt="Picture of a open book with a pen and watch on top of it">
-                    </div>
                 </div>
 
                 <!--FAQ section-->
@@ -386,5 +392,7 @@
                 </div>
             </div>
         </div>
+         <!--Mobile navigation toggle-->
+         <script src="Resources/Components/nav.js"></script>
     </body>
 </html>
