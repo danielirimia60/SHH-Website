@@ -27,6 +27,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 .hwrap {
     position: relative;
@@ -87,6 +88,9 @@ header {
 .main-nav-bar li {
     list-style: none;
     display: inline-block;
+}
+.mobile-nav-toggle {
+    display: none;
 }
 .main-nav-bar li a {
     float: left;
@@ -183,8 +187,9 @@ header {
 and google maps ------------ */
 .section1 {
     margin: 4% auto 3%;
-    width: 100%;
+    width: calc(100% - 1em);
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
 }
 .info-mediawrap {
@@ -198,6 +203,7 @@ and google maps ------------ */
 .section1 .infowrap {
     display: flex;
     flex-direction: column;
+    margin-left: 7%;
 }
 .section1 .infowrap .contact-email,
 .section1 .infowrap .contact-location,
@@ -232,6 +238,7 @@ and google maps ------------ */
     flex-direction: column;
     align-content: center;
     justify-content: center;
+    margin-left: 7%;
 }
 .mediawrap h3 {
     font-family: 'Open Sans', sans-serif;
@@ -276,7 +283,6 @@ and google maps ------------ */
     margin: 4% auto 3%;
     width: 100%;
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
 }
 /* ----- Contact form ----- */
@@ -292,7 +298,7 @@ and google maps ------------ */
 .c-form input,
 .c-form textarea {
     font-family: 'Open Sans', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 #c-name {
     width: 50%;
@@ -300,7 +306,7 @@ and google maps ------------ */
     margin: 0.5em;
 }
 #email-a {
-    width: 80%;
+    width: 50%;
     padding: 0.5em;
     margin: 0.5em;
 }
@@ -313,8 +319,9 @@ and google maps ------------ */
     font-family: 'Open Sans', sans-serif;
 }
 #f-text {
+    height: 7em;
     margin: 0.5em;
-    padding: 3em;
+    padding: 0.5em;
     width: 80%;
 }
 label {
@@ -336,6 +343,7 @@ label {
     padding: 0.4em 1.6em;
     border-radius: 50px;
     max-width: fit-content;
+    cursor: pointer;
     color: var(--pale-blue);
     background-color: var(--bright-blue);
     border: 1px solid var(--dark-blue);
@@ -672,6 +680,68 @@ label {
 @media (max-width: 800px) {
     html {
         font-size: 9px;
+    }
+}
+@media (max-width: 750px) {
+    .nav-wrap {
+        justify-content: space-between;
+        background-color: hsla(187, 2%, 98%, 1);
+    }
+    .logo-wrap {
+        margin: 0 auto;
+        position: relative;
+        left: -2%;
+    }
+    .mobile-nav-toggle {
+        display: block;
+        background-image: url('../Images/Hamburger-menu-logo.svg');
+        background-color: transparent;
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 222;
+        width: 2em;
+        aspect-ratio: 1;
+        inset: 25% 0 0 85%;
+        border: none;
+        cursor: pointer;
+    }
+    .main-nav-bar[data-visible="true"] {
+        transform: translateX(0%);
+        transform: translateY(57.8%);
+
+    }
+
+    .main-nav-bar {
+        background-color: hsla(187, 2%, 98%, 1);
+        transform: translateX(100%);
+        transform: translateY(-57.8%);
+        width: 70%;
+        padding: 2% 0;
+        transition: transform 300ms ease;
+    }
+    .main-nav-bar li {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-items: center;
+    }
+    .main-nav-bar li a {
+        padding: 1em 0;
+        border: 0;
+        color: var(--black);
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+    .main-nav-bar #active-page,
+    .main-nav-bar li a:hover {
+        border: none;
+    }
+    .section1 .infowrap, 
+    .section1 .mediawrap {
+        margin-left: 0%;
+    }
+    .contact-form {
+        margin-left: 10%;
     }
 }
 @media (max-width: 600px) {
